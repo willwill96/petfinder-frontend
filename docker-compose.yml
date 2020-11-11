@@ -1,0 +1,21 @@
+version: "3"
+
+services:
+  petfinder-graphql:
+    image: wbw4sv/petfinder-graphql
+    container_name: petfinder-graphql
+    ports:
+      - 4000:4000
+    restart: always
+    environment:
+        - PETFINDER_API_KEY=${PETFINDER_API_KEY}
+        - PETFINDER_SECRET_KEY=${PETFINDER_SECRET_KEY}
+
+  petfinder-reverse-proxy:
+    image: nginx
+    container_name: petfinder-reverse-proxy
+    volumes:
+      - ./petfinder-reverse-proxy/nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    restart: always
