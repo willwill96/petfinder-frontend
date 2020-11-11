@@ -10,6 +10,7 @@ services:
     environment:
         - PETFINDER_API_KEY=${PETFINDER_API_KEY}
         - PETFINDER_SECRET_KEY=${PETFINDER_SECRET_KEY}
+        - NODE_ENV=production
 
   petfinder-reverse-proxy:
     image: nginx
