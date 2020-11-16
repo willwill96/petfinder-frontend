@@ -8,9 +8,10 @@ services:
       - 4000:4000
     restart: always
     environment:
-        - PETFINDER_API_KEY=${PETFINDER_API_KEY}
-        - PETFINDER_SECRET_KEY=${PETFINDER_SECRET_KEY}
-        - NODE_ENV=production
+      - PETFINDER_API_KEY=${PETFINDER_API_KEY}
+      - PETFINDER_SECRET_KEY=${PETFINDER_SECRET_KEY}
+      - THE_DOG_API_KEY=${THE_DOG_API_KEY}
+      - NODE_ENV=production
 
   petfinder-reverse-proxy:
     image: nginx
