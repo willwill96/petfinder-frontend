@@ -1,6 +1,7 @@
 <template>
   <div class="breed-info-container">
     <v-progress-linear
+      indeterminate
       v-if="$apollo.queries.breedInformation.loading"
     ></v-progress-linear>
     <v-card
